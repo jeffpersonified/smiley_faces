@@ -14,7 +14,37 @@ class CanvasViewController: UIViewController {
     @IBOutlet weak var trayArrowImageView: UIImageView!
     
     var trayImageCenter: CGPoint!
+    var imageView: UIImageView!
     
+    @IBAction func onFacePan(panGestureRecognizer: UIPanGestureRecognizer) {
+        
+        var velocity = panGestureRecognizer.velocityInView(view)
+        var translation = panGestureRecognizer.translationInView(view)
+        var point = panGestureRecognizer.locationInView(view)
+        
+        if panGestureRecognizer.state == UIGestureRecognizerState.Began {
+            var frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+            imageView = UIImageView(frame: frame)
+            
+            var trayFaceView = panGestureRecognizer.view as UIImageView
+
+            imageView.image = trayFaceView.image
+            view.addSubview(imageView)
+            imageView.center = point
+            
+            imageView.userInteractionEnabled = true
+
+            var facePanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "facePan:")
+            imageView.addGestureRecognizer(facePanGestureRecognizer)
+            
+        } else if panGestureRecognizer.state == UIGestureRecognizerState.Changed {
+            imageView.center = point
+            
+        } else if panGestureRecognizer.state ==  UIGestureRecognizerState.Ended {
+            
+        }
+        
+    }
     
     @IBAction func panOnTray(panGestureRecognizer: UIPanGestureRecognizer) {
         var velocity = panGestureRecognizer.velocityInView(view)
@@ -33,14 +63,9 @@ class CanvasViewController: UIViewController {
                 self.calcArrowAngle()
                 
             } else {
-                
                 trayView.center.y = (translation.y / 10) + trayImageCenter.y
-                
             }
-            
-
-
-            
+    
         } else if panGestureRecognizer.state ==  UIGestureRecognizerState.Ended {
             
             UIView.animateWithDuration(0.2, animations: { () -> Void in
@@ -60,8 +85,6 @@ class CanvasViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     func calcArrowAngle() {
@@ -69,6 +92,17 @@ class CanvasViewController: UIViewController {
         self.trayArrowImageView.transform = CGAffineTransformMakeRotation(CGFloat(arrowAngle))
     }
     
+    func facePan(panGestureRecognizer: UIPanGestureRecognizer) {
+        var velocity = panGestureRecognizer.velocityInView(view)
+        var translation = panGestureRecognizer.translationInView(view)
+        var point = panGestureRecognizer.locationInView(view)
+        
+        if panGestureRecognizer.state == UIGestureRecognizerState.Began {
+        } else if panGestureRecognizer.state == UIGestureRecognizerState.Changed {
+            panGestureRecognizer.view!.center = point
+        } else if panGestureRecognizer.state ==  UIGestureRecognizerState.Ended {
+        }
+    }
 }
 
 func convertValue(value: Float, r1Min: Float, r1Max: Float, r2Min: Float, r2Max: Float) -> Float {
