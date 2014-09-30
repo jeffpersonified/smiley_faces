@@ -13,6 +13,7 @@
 		1FCDAA5C19DA4CF6000C81B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCDAA5B19DA4CF6000C81B0 /* Images.xcassets */; };
 		1FCDAA5F19DA4CF6000C81B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FCDAA5D19DA4CF6000C81B0 /* LaunchScreen.xib */; };
 		1FCDAA6B19DA4CF6000C81B0 /* CanvasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDAA6A19DA4CF6000C81B0 /* CanvasTests.swift */; };
+		1FCDAA7519DA4D85000C81B0 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDAA7419DA4D85000C81B0 /* CanvasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		1FCDAA6419DA4CF6000C81B0 /* CanvasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanvasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCDAA6919DA4CF6000C81B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FCDAA6A19DA4CF6000C81B0 /* CanvasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasTests.swift; sourceTree = "<group>"; };
+		1FCDAA7419DA4D85000C81B0 /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				1FCDAA5419DA4CF6000C81B0 /* AppDelegate.swift */,
 				1FCDAA5619DA4CF6000C81B0 /* ViewController.swift */,
 				1FCDAA5819DA4CF6000C81B0 /* Main.storyboard */,
+				1FCDAA7419DA4D85000C81B0 /* CanvasViewController.swift */,
 				1FCDAA5B19DA4CF6000C81B0 /* Images.xcassets */,
 				1FCDAA5D19DA4CF6000C81B0 /* LaunchScreen.xib */,
 				1FCDAA5219DA4CF6000C81B0 /* Supporting Files */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FCDAA5719DA4CF6000C81B0 /* ViewController.swift in Sources */,
+				1FCDAA7519DA4D85000C81B0 /* CanvasViewController.swift in Sources */,
 				1FCDAA5519DA4CF6000C81B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
